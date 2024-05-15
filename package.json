@@ -2,7 +2,7 @@
   "name": "easy-coding",
   "displayName": "Easy Coding",
   "description": "Coding assistant you will actually need.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "poozhu",
   "icon": "./icon.png",
   "engines": {
@@ -20,12 +20,21 @@
       {
         "command": "easy-coding.createReactComponent",
         "title": "新建 React 组件"
+      },
+      {
+        "command": "easy-coding.createReactComponentWithModuleLess",
+        "title": "新建 React 组件 (module less)"
       }
     ],
     "menus": {
       "explorer/context": [
         {
           "command": "easy-coding.createReactComponent",
+          "group": "navigation",
+          "when": "explorerResourceIsFolder"
+        },
+        {
+          "command": "easy-coding.createReactComponentWithModuleLess",
           "group": "navigation",
           "when": "explorerResourceIsFolder"
         }
