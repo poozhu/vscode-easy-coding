@@ -2,7 +2,7 @@
   "name": "easy-coding",
   "displayName": "Easy Coding",
   "description": "Coding assistant you will actually need.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "poozhu",
   "icon": "./icon.png",
   "engines": {
