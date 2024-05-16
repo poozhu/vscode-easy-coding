@@ -1,6 +1,6 @@
 const tsxStr = `import React from "react";
 
-import styles from "./index.less";
+import styles from "./index{{suffix}}.less";
 
 interface Props {
   [key: string]: any;

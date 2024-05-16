@@ -17,7 +17,12 @@ function createComponent(path: string, lessType?: "default" | "module") {
       return match.toLocaleLowerCase();
     });
 
-    const tsxString = Mustache.render(tsxStr, { componentName, className });
+    const suffix = lessType === "module" ? ".module" : "";
+    const tsxString = Mustache.render(tsxStr, {
+      componentName,
+      className,
+      suffix,
+    });
     const lessString = Mustache.render(lessStr, { className });
     fs.mkdirSync(`${path}\\${componentName}`, () => {});
     fs.writeFileSync(
@@ -28,9 +33,7 @@ function createComponent(path: string, lessType?: "default" | "module") {
       }
     );
     fs.writeFileSync(
-      `${path}\\${componentName}\\index${
-        lessType === "module" ? ".module" : ""
-      }.less`,
+      `${path}\\${componentName}\\index${suffix}.less`,
       lessString,
       (err: any) => {
         vscode.window.showErrorMessage(err);
